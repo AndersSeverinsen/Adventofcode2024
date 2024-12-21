@@ -14,18 +14,6 @@ void assert_equal(long expected, long actual) {
     }
 }
 
-template <typename T>
-vector<T> find_all_rules(typename vector<T>::iterator begin, typename vector<T>::iterator end, T value, vector<T> orders_right) {
-    vector<T> rules;
-    for (typename vector<T>::iterator it = begin; it != end; it++) {
-        if (*it == value) {
-            int i = distance(begin, it);
-            rules.push_back(orders_right[i]);
-        }
-    }
-    return rules;
-}
-
 bool equation_possible(vector<long> numbers, long test_value, int index, long acc) {
     if (index == numbers.size()) {
         return acc == test_value;
